@@ -29,7 +29,6 @@ from .gradio_depth_pred import create_demo as create_depth_pred_demo
 from .gradio_im_to_3d import create_demo as create_im_to_3d_demo
 from .gradio_pano_to_3d import create_demo as create_pano_to_3d_demo
 
-
 css = """
 #img-display-container {
     max-height: 50vh;
@@ -42,8 +41,8 @@ css = """
     }
     
 """
-DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-model = torch.hub.load('isl-org/ZoeDepth', "ZoeD_N", pretrained=True).to(DEVICE).eval()
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+model = torch.hub.load("isl-org/ZoeDepth", "ZoeD_N", pretrained=True).to(DEVICE).eval()
 
 title = "# ZoeDepth"
 description = """Official demo for **ZoeDepth: Zero-shot Transfer by Combining Relative and Metric Depth**.
@@ -62,5 +61,5 @@ with gr.Blocks(css=css) as demo:
     with gr.Tab("360 Panorama to 3D"):
         create_pano_to_3d_demo(model)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     demo.queue().launch()
