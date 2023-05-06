@@ -39,7 +39,7 @@ COMMON_CONFIG = {
     "project": "ZoeDepth",
     "tags": "",
     "notes": "",
-    "gpu": None,
+    "gpu": 0,
     "root": ".",
     "uid": None,
     "print_losses": False,

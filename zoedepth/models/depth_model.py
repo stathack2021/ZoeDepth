@@ -36,7 +36,7 @@ from torchvision import transforms
 class DepthModel(nn.Module):
     def __init__(self):
         super().__init__()
-        self.device = "cpu"
+        self.device = "cuda:0"
 
     def to(self, device) -> nn.Module:
         self.device = device
