@@ -68,6 +68,7 @@ def ZoeD_N(
         pretrained_resource = None
     else:
         pretrained_resource = "url::https://github.com/isl-org/ZoeDepth/releases/download/v1.0/ZoeD_M12_N.pt"
+        pretrained_resource = "services/depth_inference/ZoeDepth/weights/ZoeD_M12_N.pt"
 
     config = get_config(
         "zoedepth", config_mode, pretrained_resource=pretrained_resource, **kwargs
